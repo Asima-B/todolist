@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const TodoList = ()=>{
+    const items = ['Install React Project','Step 1 Step 1 Project','Install React Project'];
     return (
         <ul>
-            <li>Install React Project</li>
-            <li>Step 1 Project</li>
-            <li>Install React PRoject</li>
+            <li>{items[0]}</li>
+            <li>{items[1]}</li>
+            <li>{items[2]}</li>
         </ul>
     );
 }
@@ -17,12 +18,21 @@ const AppHeader = ()=>{
 
 const SearchPanel = () =>
 {
-    return <input placeholder={"search"}/>;
+    const searchText = 'Type your text here';
+    const searchStyle = {
+        fontSize:'20px'
+    };
+
+    return <input style={searchStyle}
+                  placeholder={searchText} disabled = {true}/>
+    // return <input placeholder={"search"}/>;
 }
 
 const App = () => {
+    const value = '<script>alert("")</script>'
     return(
         <div>
+            {value}
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
